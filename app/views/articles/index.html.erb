@@ -1,0 +1,24 @@
+<h1>List of articles</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title </th>
+            <th>Description </th>
+            <th>Holder</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% @articles.each do |article|%>
+
+            <tr>
+                <td><%=article.title%></td>
+                <td><%=article.description%></td>
+                <td>Blank</td>
+            </tr>
+                        
+        <%end%>
+    </tbody>
+
+</table>
+<a href=/articles/new>Create a new one</a>
