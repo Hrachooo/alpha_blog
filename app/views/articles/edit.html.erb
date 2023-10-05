@@ -1,0 +1,23 @@
+<h1>Editing the article</h1>
+<% if @article.errors.any?%>
+    <h2>following errors prevented</h2>
+    <ul>
+        <% @article.errors.full_messages.each do |error|%>
+            <li><%= error %></li>
+        <%end%>
+    </ul>
+<%end%>
+<%= form_with(model: @article, data:{turbo: false}, local: true) do |f| %>
+    <p>
+        <%= f.label :title%> <br>
+        <%= f.text_field :title%>
+    </p>
+    <p>
+        <%= f.label :description%> <br>
+        <%= f.text_area :description%>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+<a href=/articles>Back to list</a>
