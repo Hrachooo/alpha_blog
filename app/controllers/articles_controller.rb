@@ -6,12 +6,17 @@ class ArticlesController < ApplicationController
     def index
         @articles = Article.all
     end 
-    def create
-        @article = Article.new(params.require(:articles).permit(:title, :description))
-        @article.save
-        redirect_to @article
-    end
     def new
-    end
+        @article = Article.new
+    end 
+    def create
+        @article = Article.new(params.require(:article).permit(:title, :description))
+        if @article.save
+            flash[:message] = "The article was successfully created."
+            redirect_to @article
+        else
+           render 'new'
+        end
+    end 
 
-end
+end 

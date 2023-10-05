@@ -1,4 +1,12 @@
-<h1>Article details</h1>
-<p><strong>Title: </strong> <%= @article.title %> </p>
-<p><strong>Description: </strong> <%= @article.description %> </p>
-<a href=/articles> back to articles </a>
+<h1>Article description</h1>
+<p><strong>Title: </strong><%= @article.title%></p>
+<p><strong>Description: </strong><%= @article.description%></p>
+
+<br> 
+<p1 class="animated-text">
+<%  flash.each do |name, message| %>
+  <strong><%= message %></strong>
+<% end %>
+</p1>
+<br> <br>
+<a href=/articles/new>Create a new article</a>

@@ -1,17 +1,30 @@
-<h1>Creating a new article</h1>
-<%= form_with scope: :articles, data: {turbo: false}, url: articles_path, local: true do |f|%>
-    <p>
-        <%= f.label :title %> <br>
-        <%= f.text_field :title%>
-    </p>
-    <p>
-        <%= f.label :description %> <br>
-        <%= f.text_area :description %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+<h1>Create a new article</h1> 
+ 
+    <ul>
+        <% if @article.errors.any? %>
+          <h2> Following errors prevented</h2>
+            <% @article.errors.full_messages.each do |error| %>
+                <li><%=error%></li>
+            <% end %>
 
-<%end %> 
+        <% end %>
+    </ul>
 
-<a href=/articles> back to articles</a>
+    <%=  form_with scope: :article, data: {turbo: false},url: articles_path ,local: true  do |f| %>
+        <p>
+            <%= f.label :title%> <br>
+            <%= f.text_field :title%>
+        </p>
+        <p>
+            <%= f.label :description %> <br>
+            <%= f.text_area :description %>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
+    <% end %>
+
+
+
+<br>
+<a href=/articles> back to articles table</a>

@@ -1,3 +1,28 @@
 a{
-    color: brown;
+    color: solid rgb(4, 67, 118);
 }
+p1{
+    border: 2.5px solid rgb(4, 67, 118);
+   color: brown;
+   padding: 5px;
+   
+}
+
+  
+  /* Styles for the animated text */
+  .animated-text {
+    font-size: 18px;
+    color: #000000;
+    opacity: 0; /* Make the text invisible initially */
+    transform: translateY(20px); /* Move the text down initially */
+    animation: fadeInUp 4s forwards; /* Apply the animation */
+  }
+  
+  /* Keyframes animation definition */
+  @keyframes fadeInUp {
+    to {
+      opacity: 2; /* Make the text fully visible */
+      transform: translateY(0); /* Move the text to its original position */
+    }
+  }
+  
