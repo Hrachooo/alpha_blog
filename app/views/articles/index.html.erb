@@ -12,17 +12,12 @@
             <tr>
                 <td><%= article.title %></td>
                 <td><%= article.description%></td>
-                <td><%= link_to "Delete", article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?" } %> </td>
-                <td><%= link_to 'Show', article_path(article) %></td>
-                <td> <%=  link_to '  Edit',  edit_article_path(article)%></td>
-
+                <td><%= link_to  raw('<i class="fa-diotone fa fa-trash-can"></i>'), article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?" }, title:"Delete" %> </td>
+                <td><%= link_to raw('<i class="fa-duotone fa fa-eye"></i>'), article_path(article), title:"Show"%></td>
+                <td> <%=  link_to raw('<i class="fa-duotone fa fa-pen-to-square"></i>'),  edit_article_path(article), title:"Edit"%></td>
 
             </tr>
         <% end %> 
     </tbody>
-</table>
-<br>
-<%= link_to 'Create new article', new_article_path%>
-<br> <br>
-<a href=/> home page </a>
-
+</table> <br>
+<p>You can create a new article with your own title and description <a href=/articles/new><i class="fa-duotone fa fa-circle-plus"></i></a></p>
