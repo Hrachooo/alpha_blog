@@ -21,9 +21,9 @@
         <tr>
             <ul>
                 <td>
-                <li><%= link_to 'Edit', edit_article_path(@article)%></li> <br>
-                <li><%= link_to 'Delete', article_path(@article), data: {'turbo-method': :delete} %></li> <br>
-                <li><%= link_to 'Back to list', articles_path%></li>
+                <li><%= link_to 'Edit', edit_article_path(@article)%></li> <br> 
+                <li><%= link_to 'Delete', article_path(@article), data: {'turbo-method': :delete, 'turbo-confirm':  "are you sure to delete?"}%></li> <br> 
+                <li><%= link_to 'Back to list', articles_path%></li> 
                 </td>
             </ul>
         </tr>

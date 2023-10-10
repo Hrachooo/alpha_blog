@@ -49,6 +49,9 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem 'jquery-rails'
 ##
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+##
+gem 'font-awesome-sass-rails', '~> 3.0', '>= 3.0.2.2'
 
 
 
