@@ -4,4 +4,6 @@ class PagesController < ApplicationController
     end
     def about
     end 
+    def about_developer
+    end 
 end

@@ -1,21 +1,26 @@
 <% if @article.errors.any?%>
-    <h2>following errors prevented</h2>
-    <ul>
-        <% @article.errors.full_messages.each do |error|%>
-            <li><%= error %></li>
-        <%end%>
-    </ul>
-<%end%>
-<%= form_with(model: @article, data:{turbo: false}, local: true) do |f| %>
-    <p>
-        <%= f.label :title%> <br>
-        <%= f.text_field :title%>
-    </p>
-    <p>
-        <%= f.label :description%> <br>
-        <%= f.text_area :description%>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+    <div class="container">
+        <div class= " alert alert-danger" role="alert">
+            <%= render 'shared/errors' %> 
+        </div>
+    </div>
 <% end %>
+<div class="container d-flex justify-content-center align-items-center drop-shadow" style="margin: 170px Auto; background-color: rgba(93, 134, 97, 0.298); max-width: 230px; max-height: 500px; box-shadow: 4px 4px 4px 4px gray;">
+    <%= form_with(model: @article, data: { turbo: false }, local: true) do |f| %>
+   
+        <p>
+            <%= f.label :Username %><br>
+            <%= f.text_field :title %>
+        </p>
+        <p>
+            <%= f.label :Password %><br>
+            <%= f.text_field :description %>
+        </p>
+        <p>
+            <%= f.submit "Sign in", class: "rounded-button" %>
+            <a href=/articles><button type="button" class="btn btn-success" style="height: 35px; width: 80px">Cancel</button></a>
+
+        </p>
+      
+    <% end %>
+</div>

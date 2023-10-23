@@ -1,25 +1,30 @@
 
-<h1> <a href=/ > <i class="fa-duotone fa fa-house" style="color:gray"> </i></a>&nbsp;&nbsp;Listing the table of articles</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Title </th>
-            <th>Descritpion </th>
-            <th colspan="3">Actions </th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @articles.each do |article|%>
+<div class="container" style="margin: 40px 5px">
+    <h2>Listing the table of articles</h2>
+</div>
+<div class="container">
+    <table class="table table-success">
+        <thead>
             <tr>
-                <td><%= article.id %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
-                <td><%= article.title %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
-                <td><%= article.description %>  </td>
-                <td><%= link_to raw('<i class="fa-diotone fa fa-trash-can" style="color:gray"></i>'), article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "are you sure?" }, title:"Delete" %> </td>
-                <td><%= link_to raw('<i class="fa-duotone fa fa-eye" style="color:gray"></i>'), article_path(article), title:"Show"%></td>
-                <td> <%=  link_to raw('<i class="fa-duotone fa fa-pen-to-square" style="color:gray"></i>'),  edit_article_path(article), title:"Edit"%></td>
-
+                <th>ID</th>
+                <th>Title </th>
+                <th >Descritpion </th>
+                <th colspan="3" style="text-align: center; padding-right: 180px">Actions </th>
             </tr>
-        <% end %> 
-    </tbody>
-</table> <br>
-<p>You can create a new article with your own title and description <a href=/articles/new><i class="fa-duotone fa fa-circle-plus" style="color:gray"></i></a></p>
+        </thead>
+        <tbody>
+            <% @articles.each do |article|%>
+                <tr>
+                    <td><%= article.id %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
+                    <td><%= article.title %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
+                    <td><%= article.description %>  </td>
+                    <td><%= link_to raw('<i class="fa-diotone fa fa-trash-can" style="color:gray"></i>'), article_path(article), data: { turbo_method: :delete, "turbo-confirm": "are you sure?" }, title:"Delete" %> </td>
+                    <td><%= link_to raw('<i class="fa-duotone fa fa-eye" style="color:gray"></i>'), article_path(article), title:"Show"%></td>
+                    <td> <%=  link_to raw('<i class="fa-duotone fa fa-pen-to-square" style="color:gray"></i>'),  edit_article_path(article), title:"Edit"%></td>
+
+                </tr>
+            <% end %> 
+        </tbody>
+    </table>
+</div> 
+<br> <br>

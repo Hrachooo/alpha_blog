@@ -1,0 +1,9 @@
+<% if @article.errors.any?%>
+    <h2>Following errors prevented</h2>
+    <%= link_to raw('<i class="fa-regular fa-circle-xmark"></i>'), new_article_path, titl:"cancel"%>
+    <ul>
+        <% @article.errors.full_messages.each do |error|%>
+            <li><%= error %></li>
+        <%end%>
+    </ul>
+<%end%>
