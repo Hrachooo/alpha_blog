@@ -5,22 +5,23 @@
         </div>
     </div>
 <% end %>
-<div class="container d-flex justify-content-center align-items-center drop-shadow" style="margin: 170px Auto; background-color: rgba(93, 134, 97, 0.298); max-width: 230px; max-height: 500px; box-shadow: 4px 4px 4px 4px gray;">
+<div class="container d-flex justify-content-center align-items-center drop-shadow" style="margin: 170px Auto; background-color: rgba(93, 134, 97, 0.298); max-width: 280px; max-height: 280px; box-shadow: 4px 4px 4px 4px gray;">
     <%= form_with(model: @article, data: { turbo: false }, local: true) do |f| %>
-   
+
         <p>
-            <%= f.label :Username %><br>
+            <%= f.label :title %><br>
             <%= f.text_field :title %>
         </p>
         <p>
-            <%= f.label :Password %><br>
+            <%= f.label :description %><br>
             <%= f.text_field :description %>
         </p>
         <p>
-            <%= f.submit "Sign in", class: "rounded-button" %>
-            <a href=/articles><button type="button" class="btn btn-success" style="height: 35px; width: 80px">Cancel</button></a>
-
+            <%= f.submit  class: "rounded-button", style: "height: 45px; width: 110px; font-size: 15px"%>
+            <a href="javascript:history.go(-1)">
+                <button type="button" class="btn btn-success" style="height: 45px; width: 110px; font-size: 15px">Cancel</button>
+            </a>
         </p>
-      
+
     <% end %>
 </div>

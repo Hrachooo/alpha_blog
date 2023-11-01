@@ -18,7 +18,7 @@
                     <td><%= article.id %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
                     <td><%= article.title %> <i class="fa-solid fa-grip-lines-vertical"></i> </td>
                     <td><%= article.description %>  </td>
-                    <td><%= link_to raw('<i class="fa-diotone fa fa-trash-can" style="color:gray"></i>'), article_path(article), data: { turbo_method: :delete, "turbo-confirm": "are you sure?" }, title:"Delete" %> </td>
+                    <td><%= link_to raw('<i class="fa-diotone fa fa-trash-can" style="color:gray"></i>'), article_path(article), data: { turbo_method: :delete, turbo_confirm: "are you sure?" }, title: "Delete" %> </td>
                     <td><%= link_to raw('<i class="fa-duotone fa fa-eye" style="color:gray"></i>'), article_path(article), title:"Show"%></td>
                     <td> <%=  link_to raw('<i class="fa-duotone fa fa-pen-to-square" style="color:gray"></i>'),  edit_article_path(article), title:"Edit"%></td>
 
